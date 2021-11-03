@@ -112,5 +112,5 @@ wiek INT UNSIGNED
 ### f)
 
 ```sql
-INSERT INTO zwierz FROM postac (id_postaci,nazwa,wiek) WHERE rodzaj = 'ptak' AND rodzaj = 'waz';
+INSERT INTO zwierz SELECT postac (id_postaci,nazwa,wiek) FROM postac WHERE rodzaj = 'ptak' AND rodzaj = 'waz';
 ```
