@@ -6,7 +6,7 @@
 CREATE TABLE postac (
     id_postaci INT AUTO_INCREMENT PRIMARY KEY,
     nazwa VARCHAR(40),
-    rodzaj ENUM('wiking','ptak','tesciowa'),
+    rodzaj ENUM('wiking','ptak','kobieta'),
     data_ur DATE,
     wiek INT UNSIGNED
 );
