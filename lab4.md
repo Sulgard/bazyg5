@@ -3,7 +3,7 @@
 ### a)
 ```sql
 
-SELECT FROM postac WHERE rodzaj = 'wiking' AND nazwa != 'Bjorn' ORDER BY wiek ASC;
+SELECT * FROM postac WHERE rodzaj = 'wiking' AND nazwa != 'Bjorn' ORDER BY wiek ASC;
 DELETE FROM postac where id_postaci IN (6,8);
 
 ```
