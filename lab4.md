@@ -14,9 +14,17 @@ DELETE FROM postac where id_postaci IN (6,8);
 
 SHOW CREATE TABLE postac;
 
-ALTER TABLE postac DROP FOREIGN KEY ... ;
+ALTER TABLE postac DROP FOREIGN KEY postac_ibfk_1 ;
 
-ALTER TABLE postac DROP PRIMARY KEY ... ;
+ALTER TABLE walizka DROP FOREIGN KEY walizka_ibfk_1;
+
+ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_1;
+
+ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_1;
+
+ALTER TABLE postac MODIFY id_postaci INT;
+
+ALTER TABLE postac DROP PRIMARY KEY;
 
 ```
 
