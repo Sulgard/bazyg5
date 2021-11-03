@@ -69,7 +69,7 @@ INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) VALUES ('Loko','waz','1541-03-15'
 ### b)
 
 ```sql
-CREATE TABLE marynarz LIKE postac;
+CREATE TABLE marynarz SELECT * FROM postac;
 ```
 
 ### c)
@@ -82,33 +82,35 @@ CREATE TABLE marynarz LIKE postac;
 
 ### a)
 ```sql
-
-
+UPDATE postac SET statek = NULL WHERE statek = 'jamnik';
 ```
 ### b)
 
 ```sql
-
+DELETE FROM postac WHERE nazwa = 'Banki';
 ```
 
 ### c)
 
 ```sql
-
+DELETE FROM statek WHERE nazwa IN ('jamnik','szyszka')
 ```
 ### d)
 ```sql
-
-
+DROP table statek;
 ```
 ### e)
 
 ```sql
-
+CREATE table zwierz(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nazwa VARCHAR(50),
+wiek INT UNSIGNED
+);
 ```
 
 ### f)
 
 ```sql
-
+INSERT INTO zwierz FROM postac (id_postaci,nazwa,wiek) WHERE rodzaj = 'ptak' AND rodzaj = 'waz';
 ```
