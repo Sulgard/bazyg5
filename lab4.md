@@ -34,12 +34,13 @@ ALTER TABLE postac DROP PRIMARY KEY;
 
 ### a)
 ```sql
-ALTER TABLE postac ADD COLUMN pesel CHAR(11) PRIMARY KEY AFTER id_postaci;
+ALTER TABLE postac ADD COLUMN pesel CHAR(11);
+ALTER TABLE postac ADD PRIMARY KEY(pesel);
 ```
 ### b)
 
 ```sql
-ALTER TABLE postac MODIFY rodzaj ENUM('wiking','ptak','tesciowa','syrena');
+ALTER TABLE postac MODIFY rodzaj ENUM('wiking','ptak','kobieta','syrena');
 ```
 
 ### c)
