@@ -57,7 +57,7 @@ UPDATE postac SET statek = 'jamnik' WHERE nazwa LIKE %a%;
 ### b)
 
 ```sql
-UPDATE statek SET ladownosc = 0.7 * ladownosc WHERE data_wodowania >= '1901-01-01' AND data_wodowania <= '2000-12-31';
+UPDATE statek SET max_ladownosc = 0.7 * max_ladownosc WHERE data_wodowania >= '1901-01-01' AND data_wodowania <= '2000-12-31';
 ```
 
 ### c)
