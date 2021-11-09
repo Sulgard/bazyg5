@@ -103,7 +103,7 @@ DELETE FROM postac WHERE nazwa = 'Banki';
 ### c)
 
 ```sql
-DELETE FROM statek WHERE nazwa IN ('jamnik','szyszka')
+DELETE FROM statek WHERE nazwa_statku IN ('jamnik','szyszka');
 ```
 ### d)
 ```sql
@@ -122,5 +122,6 @@ wiek INT UNSIGNED
 ### f)
 
 ```sql
-INSERT INTO zwierz SELECT postac (id_postaci,nazwa,wiek) FROM postac WHERE rodzaj = 'ptak' AND rodzaj = 'waz';
+INSERT INTO zwierz SELECT id_postaci,nazwa,wiek FROM postac WHERE rodzaj = 'ptak';
+INSERT INTO zwierz SELECT id_postaci,nazwa,wiek FROM postac WHERE rodzaj = 'waz';
 ```
