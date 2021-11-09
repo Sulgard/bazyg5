@@ -72,7 +72,7 @@ ALTER TABLE postac MODIFY wiek INT UNSIGNED CHECK(wiek<1000);
 ```sql
 ALTER TABLE postac MODIFY rodzaj ENUM('wiking','ptak','kobieta','syrena','waz');
 
-INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) VALUES ('Loko','waz','1541-03-15',41);
+INSERT INTO postac (id_postaci,nazwa,pesel,rodzaj,data_ur,wiek) VALUES (96,'Loko','1111111151515','waz','1541-03-15',41);
 
 ```
 ### b)
