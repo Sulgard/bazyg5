@@ -79,6 +79,7 @@ INSERT INTO postac (id_postaci,nazwa,pesel,rodzaj,data_ur,wiek) VALUES (96,'Loko
 
 ```sql
 CREATE TABLE marynarz SELECT * FROM postac;
+INSERT INTO marynarz SELECT * FROM postac WHERE statek IS NOT NULL;
 ```
 
 ### c)
