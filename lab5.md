@@ -51,19 +51,19 @@ SELECT * FROM kreatura WHERE nazwa LIKE '%or%' AND udzwig BETWEEN 30 AND 70;
 
 ### a)
 ```sql
-lipiec sierpien
-SELECT MONTH('2017/05/25 09:08') AS Month;
-
 SELECT * FROM zasob WHERE MONTH(dataPozyskania) BETWEEN 7 AND 8;
 ```
 ### b)
 
 ```sql
+SELECT * FROM zasob ORDER BY waga ASC;
 ```
 
 ### c)
 
 ```sql
+SELECT * FROM kreatura ORDER BY dataUr ASC LIMIT 5;
+
 ```
 
 ## Zadanie 4. <p>&nbsp;</p>
@@ -71,43 +71,38 @@ SELECT * FROM zasob WHERE MONTH(dataPozyskania) BETWEEN 7 AND 8;
 ### a)
 ```sql
 
+SELECT DISTINCT rodzaj FROM zasob;
 
 ```
 ### b)
 
 ```sql
+SELECT CONCAT(nazwa, ' ', rodzaj) FROM kreatura WHERE rodzaj LIKE 'wi%';
+
 ```
 
 ### c)
 
 ```sql
-
+SELECT nazwa,waga * ilosc AS waga FROM zasob WHERE YEAR(dataPozyskania) BETWEEN '2000' AND '2007';
 ```
 
 ## Zadanie 5. <p>&nbsp;</p>
 
 ### a)
 ```sql
+SELECT nazwa, waga *0.7 AS jedzenie , waga* 0.3 AS odpady FROM zasob WHERE rodzaj = 'jedzenie';
 ```
 ### b)
 
 ```sql
+SELECT * FROM zasob WHERE rodzaj IS NULL;
 ```
 
 ### c)
 
 ```sql
-```
-### d)
-```sql
-```
-### e)
-
-```sql
-
+SELECT DISTINCT(rodzaj) FROM zasob ORDER BY rodzaj ASC;
+SELECT DISTINCT nazwa, rodzaj FROM zasob WHERE nazwa LIKE 'Ba%' OR nazwa LIKE '%os' ORDER BY nazwa ASC;
 ```
 
-### f)
-
-```sql
-```
