@@ -59,18 +59,36 @@ WHERE e.idZasobu=z.idZasobu AND e.idKreatury=k.idKreatury;
 ### c)
 
 ```sql
+SELECT k.nazwa,e.idEkwipunku
+from kreatura k 
+LEFT JOIN ekwipunek e 
+ON k.idKreatury=e.idKreatury
+WHERE e.idEkwipunku is null;
 ```
 
 ## Zadanie 4. <p>&nbsp;</p>
 
 ### a)
 ```sql
-
+SELECT k.nazwa,z.nazwa,k.dataUr 
+from kreatura k 
+LEFT JOIN ekwipunek e
+ON k.idKreatury=e.idKreatury 
+LEFT JOIN zasob z
+ON z.idZasobu=e.idZasobu
+WHERE k.dataUr between '1670-01-01' AND '1677-10-05';
 
 ```
 ### b)
 
 ```sql
+SELECT k.nazwa,k.dataUr,z.nazwa
+from kreatura k 
+LEFT JOIN ekwipunek e
+ON k.idKreatury=e.idKreatury 
+LEFT JOIN zasob z
+ON z.idZasobu=e.idZasobu
+WHERE z.rodzaj = 'jedzenie'  order by k.dataUr desc limit 5;
 ```
 
 ### c)
