@@ -101,10 +101,17 @@ WHERE z.rodzaj = 'jedzenie'  order by k.dataUr desc limit 5;
 
 ### a)
 ```sql
+SELECT k.rodzaj FROM kreatura k
+INNER JOIN ekwipunek e 
+ON k.idKreatury=e.idKreatury
+INNER JOIN zasob z on e.idZasobu=z.idZasobu
+WHERE k.rodzaj NOT IN ('malpa','waz')
+group by k.rodzaj;
 ```
 ### b)
 
 ```sql
+
 ```
 
 ### c)
