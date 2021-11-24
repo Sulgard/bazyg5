@@ -38,7 +38,7 @@ GROUP BY w.nazwa;
 
 ### a)
 ```sql
-SELECT w.nazwa,GROUP_CONCAT(k.nazwa),count(u.id_uczestnika) FROM wyprawa w
+SELECT w.nazwa,GROUP_CONCAT(k.nazwa) AS imiona_uczestnikow,count(u.id_uczestnika) AS liczba_uczestnikow FROM wyprawa w
 LEFT JOIN uczestnicy u
 ON w.id_wyprawy=u.id_wyprawy
 LEFT JOIN kreautra k 
@@ -48,6 +48,7 @@ GROUP BY w.nazwa;
 ### b)
 
 ```sql
+
 
 ```
 
