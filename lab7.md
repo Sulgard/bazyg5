@@ -38,6 +38,12 @@ GROUP BY w.nazwa;
 
 ### a)
 ```sql
+SELECT w.nazwa,GROUP_CONCAT(k.nazwa),count(u.id_uczestnika) FROM wyprawa w
+LEFT JOIN uczestnicy u
+ON w.id_wyprawy=u.id_wyprawy
+LEFT JOIN kreautra k 
+ON k.idKreatury=u.id_uczestnika
+GROUP BY w.nazwa;
 ```
 ### b)
 
