@@ -111,24 +111,17 @@ GROUP BY by k.rodzaj HAVING sum(e.ilosc) < 30;
 ### b)
 
 ```sql
+select k.nazwa,k.rodzaj,k.dataUr from kreatura k,
+(select rodzaj, min(dataUr) as min from kreatura 
+group by rodzaj) as pod
+where k.dataUr = pod.min;
 
+
+select rodzaj, min(dataUr) from kreatura 
+group by rodzaj
+union
+select rodzaj, max(dataUr) from kratura 
+group by rodzaj;
 ```
 
-### c)
 
-```sql
-```
-### d)
-```sql
-```
-### e)
-
-```sql
-
-```
-
-### f)
-
-```sql
-
-```
