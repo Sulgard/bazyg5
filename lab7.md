@@ -24,6 +24,12 @@ WHERE u.id_uczestnika is null;
 ### c)
 
 ```sql
+SELECT w.nazwa,SUM(e.ilosc) AS suma_ekwipunku FROM wyprawa w 
+LEFT JOIN kreautra k 
+ON w.kierownik=k.idKreatury
+LEFT JOIN ekwipunek e
+ON k.idKreatury=e.idKreatury
+GROUP BY w.nazwa;
 ```
 
 
