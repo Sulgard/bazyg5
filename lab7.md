@@ -69,11 +69,7 @@ GROUP BY w.nazwa;
 
 ```
 
-### c)
 
-```sql
-
-```
 
 ## Zadanie 4. <p>&nbsp;</p>
 
@@ -88,37 +84,11 @@ GROUP BY w.nazwa;
 
 ```
 
-### c)
 
-```sql
-
-```
 
 ## Zadanie 5. <p>&nbsp;</p>
 
 ### a)
 ```sql
 ```
-### b)
 
-```sql
-```
-
-### c)
-
-```sql
-```
-### d)
-```sql
-```
-### e)
-
-```sql
-
-```
-
-### f)
-
-```sql
-
-```
