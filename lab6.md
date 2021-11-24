@@ -106,7 +106,7 @@ INNER JOIN ekwipunek e
 ON k.idKreatury=e.idKreatury
 INNER JOIN zasob z on e.idZasobu=z.idZasobu
 WHERE k.rodzaj NOT IN ('malpa','waz')
-group by k.rodzaj;
+GROUP BY by k.rodzaj HAVING sum(e.ilosc) < 30;
 ```
 ### b)
 
