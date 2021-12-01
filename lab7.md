@@ -60,6 +60,10 @@ ORDER BY data_rozpoczecia ASC;
 ### c)
 
 ```sql
+SELECT s.nazwa, count(e.sektor) FROM etapy_wyprawy e
+LEFT JOIN sektor s 
+ON e.sektor=s.id_sektora
+group by s.nazwa;
 ```
 ## Zadanie 3. <p>&nbsp;</p>
 
