@@ -111,5 +111,10 @@ GROUP BY w.id_wyprawy;
 
 ### a)
 ```sql
+SELECT distinct(w.nazwa),k.nazwa, datediff(w.data_rozpoczecia,k.dataUr) as wiekwdniach FROM wyprawa w
+INNER JOIN uczestnicy u 
+ON u.id_wyprawy=w.id_wyprawy
+INNER JOIN kreatura k
+ON u.id_uczestnika=k.idKreatury;
 ```
 
