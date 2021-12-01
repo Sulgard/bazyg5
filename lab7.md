@@ -92,7 +92,17 @@ HAVING sum(length(e.dziennik)) > 400;
 ### b)
 
 ```sql
-
+SELECT w.id_wyprawy,((count(e.ilosc)*sum(z.waga)) / count(u.id_uczestnika)) as swz
+FROM wyprawa w
+INNER JOIN uczestnicy u 
+ON w.id_wyprawy=u.id_wyprawy
+INNER JOIN kreatura k
+ON u.id_uczestnika=k.idKreatury
+INNER JOIN ekwipunek e
+ON e.idKreatury=k.idKreatury
+INNER JOIN zasob z
+ON e.idZasobu=z.idZasobu
+GROUP BY w.id_wyprawy;
 ```
 
 
