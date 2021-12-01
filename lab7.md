@@ -61,8 +61,8 @@ ORDER BY data_rozpoczecia ASC;
 
 ### a)
 ```sql
-SELECT s.nazwa, count(e.sektor) FROM etapy_wyprawy e
-LEFT JOIN sektor s 
+SELECT s.nazwa, count(e.sektor) FROM sektor s
+LEFT JOIN etapy_wyprawy e
 ON e.sektor=s.id_sektora
 group by s.nazwa;
 ```
