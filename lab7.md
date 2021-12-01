@@ -48,7 +48,12 @@ GROUP BY w.nazwa;
 ### b)
 
 ```sql
-
+SELECT e.idEtapu, s.nazwa, w.data_rozpoczecia FROM etapy_wyprawy e 
+LEFT JOIN wyprawa w
+ON w.id_wyprawy=e.idWyprawy
+LEFT JOIN sektor s 
+ON e.sektor=s.id_sektora
+ORDER BY data_rozpoczecia ASC;
 
 ```
 
