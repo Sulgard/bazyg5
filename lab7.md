@@ -83,7 +83,11 @@ GROUP BY k.nazwa;
 ### a)
 ```sql
 
-
+SELECT w.nazwa, sum(length(e.dziennik)) FROM wyprawa w
+INNER JOIN etapy_wyprawy e 
+ON w.id_wyprawy=e.idWyprawy
+GROUP BY w.nazwa
+HAVING sum(length(e.dziennik)) > 400;
 ```
 ### b)
 
