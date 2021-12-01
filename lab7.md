@@ -69,7 +69,10 @@ group by s.nazwa;
 ### b)
 
 ```sql
-
+SELECT k.nazwa,IF(count(u.id_uczestnika) > 0,"Bral udzial","Nie bral udzialu") FROM kreatura k 
+LEFT JOIN uczestnicy u 
+ON k.idKreatury=u.id_uczestnika
+GROUP BY k.nazwa;
 
 ```
 
