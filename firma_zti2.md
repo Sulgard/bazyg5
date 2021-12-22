@@ -56,3 +56,9 @@ LEFT JOIN towar t
 ON t.id_towaru=pz.towar
 WHERE YEAR(z.data_zamowienia) = 2018;
 ```
+### 7.Stwórz nową tabelę o nazwie towary_full_info, w której znajdą się kolumny nazwa_towaru, cena_zakupu, kategoria(nazwa),ilosc , jednostka miary(nazwa).
+
+```sql
+CREATE TABLE towary_full_info (nazwa_towary VARCHAR(50), cena_zakupu INT, kategoria VARCHAR(50), ilosc INT , jednostka_miary VarCHAR(50));
+
+```
