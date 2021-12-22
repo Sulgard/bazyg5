@@ -68,3 +68,19 @@ CREATE TABLE towary_full_info (nazwa_towary VARCHAR(50), cena_zakupu INT, katego
 ```sql
 SELECT * FROM zamowienie ORDER BY data_zamowienia ASC LIMIT 5;
 ```
+
+### 9. Wyświetl wszystkie zamówienia, które mają status inny niż zrealizowane.
+
+```sql
+SELECT * FROM zamowienie z 
+LEFT JOIN status_zamowienia sz
+ON z.status_zamowienia=sz.id_statusu_zamowienia
+WHERE z.status_zamowienia != 5;
+```
+
+### 10. Wyświetl wszystkie adresy, których kod został niepoprawnie zapisany.
+```sql
+
+select * from adres_klienta
+where kod not regexp '[0-9]{2}-[0-9]{3}';
+```
