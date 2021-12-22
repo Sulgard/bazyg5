@@ -16,3 +16,6 @@ LEFT JOIN stan_magazynowy sm
 ON t.id_towaru=sm.towar
 ORDER BY sm.ilosc ASC;
 ```
+
+### 3.Wyświetl wszystkie anulowane zamówienia.
+
