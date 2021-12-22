@@ -19,3 +19,9 @@ ORDER BY sm.ilosc ASC;
 
 ### 3.Wyświetl wszystkie anulowane zamówienia.
 
+```
+SELECT * FROM zamowienie z
+LEFT JOIN status_zamowienia sz
+ON  z.status_zamowienia=sz.id_statusu_zamowienia
+WHERE z.status_zamowienia = 6;
+```
