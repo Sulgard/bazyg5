@@ -39,9 +39,7 @@ SELECT * FROM zamowienie order by data_zamowienia DESC Limit 10;
 ```sql
 SELECT * FROM pracownik  order by pensja asc Limit 5;
 ```
-#LIKE 'a_%
 
-SELECT * FROM towar;
 ### 9. Z tabeli towar wyświetl 10 najdroższych towarów, których nazwa nie zawiera litery 'a'.
 ```sql
 SELECT * FROM towar WHERE nazwa_towaru NOT LIKE '%a%' ORDER BY cena_zakupu DESC LIMIT 10 ;
