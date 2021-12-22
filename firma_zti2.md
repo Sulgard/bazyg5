@@ -62,3 +62,9 @@ WHERE YEAR(z.data_zamowienia) = 2018;
 CREATE TABLE towary_full_info (nazwa_towary VARCHAR(50), cena_zakupu INT, kategoria VARCHAR(50), ilosc INT , jednostka_miary VarCHAR(50));
 
 ```
+
+### 8. Wyświetl pozycje zamówień dla 5 najstarszych zamówień.
+
+```sql
+SELECT * FROM zamowienie ORDER BY data_zamowienia ASC LIMIT 5;
+```
