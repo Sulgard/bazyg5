@@ -54,3 +54,14 @@ LEFT JOIN jednostka_miary jm
 ON sm.jm=jm.id_jednostki
 WHERE sm.jm = 3;
 ```
+
+### 11. Stwórz nową tabelę o nazwie towary_powyzej_100, do której wstaw towary, których cena jest większa równa 100. Użyj CREATE ... SELECT.
+```sql
+
+```
+
+### 12. Stwórz nową tabelę o nazwie pracownik_50_plus na podstawie tabeli pracownik z wykorzystaniem LIKE. Wstaw do tej tabeli wszystkie rekordy z tabeli pracownik gdzie wiek pracownika jest większy równy 50 lat.
+
+```sql
+
+```
