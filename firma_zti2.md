@@ -47,3 +47,12 @@ WHERE sm.jm IS NULL;
 ```
 
 ### 6. Wyświetl numer zamówienia, nazwę towaru, ilosc i cenę dla zamówień złożonych w 2018 roku.
+
+```sql
+SELECT z.numer_zamowienia,t.nazwa_towaru,pz.cena, pz.ilosc FROM zamowienie z
+LEFT JOIN pozycja_zamowienia pz
+ON  z.id_zamowienia=pz.zamowienie
+LEFT JOIN towar t 
+ON t.id_towaru=pz.towar
+WHERE YEAR(z.data_zamowienia) = 2018;
+```
