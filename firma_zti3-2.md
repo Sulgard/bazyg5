@@ -1,4 +1,4 @@
-###1. Wyświetl nazwę działu i minimalną, maksymalną i średnią wartość pensji w każdym dziale.
+### 1. Wyświetl nazwę działu i minimalną, maksymalną i średnią wartość pensji w każdym dziale.
 
 
 
