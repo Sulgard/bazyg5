@@ -25,3 +25,18 @@ CREATE TABLE archiwum_wypraw(id_wyprawy INT(11) PRIMARY KEY,
  data_zakonczenia DATE, 
  kierownik VARCHAR(50));
 ```
+
+
+```sql
+DELIMITER //
+CREATE TRIGGER wyprawa_after_delete
+BEFORE DELETE ON wyprawa
+FOR EACH ROW
+BEGIN
+  DECLARE kierownik varchar(100);
+    SET kierownik = (SELECT kreatura.nazwa FROM kreatura WHERE idKreatury=OLD.kierownik);
+    INSERT INTO archiwum_wypraw VALUES(OLD.id_wyprawy,OLD.nazwa,OLD.data_rozpoczecia,OLD.data_zakonczenia,kierownik);
+END
+//
+DELIMITER ;
+```
