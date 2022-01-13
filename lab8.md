@@ -56,3 +56,15 @@ DELIMITER ;
 CALL eliksir_sily(1); 
 
 ```
+
+```sql
+DELIMITER //
+CREATE FUNCTION litery(tekst varchar(1000))
+    RETURNS varchar(1000)
+BEGIN
+    DECLARE duze varchar(100);
+    SELECT UPPER(tekst) INTO duze;
+    RETURN duze;
+END //
+DELIMITER;
+```
