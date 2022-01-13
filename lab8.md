@@ -14,3 +14,10 @@ END
 //
 DELIMITER ;
 ```
+
+#### 2.Stwórz tabelę archiwum_wypraw z polami id_wyprawy, nazwa, data_rozpoczecia, data_zakonczenia, kierownik (varchar), do której będą wstawiane rekordy po usunięciu z tabeli wyprawa. Do kolumny kierownik wstawiane jest nazwa kreatury na podstawie usuwanego id_kreatury.
+
+```sql
+
+
+```
