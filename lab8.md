@@ -19,5 +19,9 @@ DELIMITER ;
 
 ```sql
 
-
+CREATE TABLE archiwum_wypraw(id_wyprawy INT(11) PRIMARY KEY,
+ nazwa VARCHAR(50), 
+ data_rozpoczecia DATE, 
+ data_zakonczenia DATE, 
+ kierownik VARCHAR(50));
 ```
