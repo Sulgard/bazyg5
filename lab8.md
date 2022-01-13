@@ -40,3 +40,19 @@ END
 //
 DELIMITER ;
 ```
+
+
+#### 3.
+
+```sql
+DELIMITER //
+CREATE PROCEDURE eliksir_sily(IN id int)
+  BEGIN
+    UPDATE kreatura SET udzwig = 1.2 * udzwig where idKreatury = id;
+  END
+  //
+DELIMITER ;
+
+CALL eliksir_sily(1); 
+
+```
