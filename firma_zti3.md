@@ -42,5 +42,17 @@ group by k.nazwa_kategori;
 
 ### 6.Wyświetl średnie zarobki pracowników za zaokrągleniem do 2 miejsc po przecinku.
 ```sql
+SELECT ROUND(avg(pensja)) as srednie_zarobki FROM pracownik;
+```
+
+### 7.Wyświetl średnie zarobki pracowników, którzy pracują co najmniej od 5 lat.
+
+```sql
+SELECT round(avg(pensja)) as srednie_zarobki FROM pracownik WHERE year(curdate()) - year(data_zatrudnienia) > 5;
+```
+
+### 8.Wyświetl 10 najczęściej sprzedawanych produktów.
+
+```sql
 
 ```
