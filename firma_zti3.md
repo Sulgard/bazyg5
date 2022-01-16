@@ -54,5 +54,31 @@ SELECT round(avg(pensja)) as srednie_zarobki FROM pracownik WHERE year(curdate()
 ### 8.Wyświetl 10 najczęściej sprzedawanych produktów.
 
 ```sql
+SELECT t.nazwa_towaru, count(pz.towar) as ilosc FROM towar t
+INNER JOIN pozycja_zamowienia pz
+ON pz.towar=t.id_towaru
+GROUP BY t.nazwa_towaru
+ORDER BY count(pz.towar) DESC LIMIT 10;
+```
 
+### 9.Wyświetl numer zamówienia, jego wartość (suma wartości wszystkich jego pozycji) zarejestrowanych w pierwszym kwartale 2017 roku.
+
+```sql
+SELECT z.id_zamowienia,z.numer_zamowienia,quarter(z.data_zamowienia), sum(pz.cena) as wartosc_zamowienia FROM zamowienie z
+LEFT JOIN pozycja_zamowienia pz
+ON pz.zamowienie=z.id_zamowienia
+WHERE YEAR(z.data_zamowienia) = "2017" AND quarter(z.data_zamowienia) = 1
+group by z.id_zamowienia;
+```
+
+### 10.Wyświetl imie, nazwisko i sumę wartości zamówień, które dany pracownik dodał. Posortuj malejąco po sumie.
+
+```sql
+SELECT p.id_pracownika,p.imie,p.nazwisko,sum(pz.cena) as wartosc_zamowien FROM pracownik p 
+LEFT JOIN zamowienie z 
+ON z.pracownik_id_pracownika=p.id_pracownika
+LEFT JOIN pozycja_zamowienia pz
+ON pz.zamowienie=z.id_zamowienia
+GROUP BY p.id_pracownika
+ORDER BY wartosc_zamowien DESC;
 ```
