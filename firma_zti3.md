@@ -13,6 +13,8 @@ SELECT imie, nazwisko, YEAR(CURDATE()) - YEAR(data_urodzenia) as wiek FROM praco
 ### 3.Wyświetl nazwę działu i liczbę pracowników przypisanych do każdego z nich.
 
 ```sql
-
-
+SELECT d.nazwa,count(p.dzial) as liczba_pracownikow FROM dzial d
+LEFT JOIN pracownik p
+ON p.dzial=d.id_dzialu
+GROUP BY d.nazwa;
 ```
