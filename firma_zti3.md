@@ -18,3 +18,9 @@ LEFT JOIN pracownik p
 ON p.dzial=d.id_dzialu
 GROUP BY d.nazwa;
 ```
+
+### 4.Wyświetl nazwę kategorii oraz liczbę produktów w każdej z nich.
+
+```sql
+
+```
