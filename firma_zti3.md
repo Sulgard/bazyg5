@@ -22,5 +22,10 @@ GROUP BY d.nazwa;
 ### 4.Wyświetl nazwę kategorii oraz liczbę produktów w każdej z nich.
 
 ```sql
-
+SELECT distinct(k.nazwa_kategori),sum(sm.ilosc) as liczba_produktow FROM kategoria k 
+LEFT JOIN towar t
+ON t.kategoria=k.id_kategori
+LEFT JOIN stan_magazynowy sm
+ON sm.towar=t.id_towaru
+group by k.nazwa_kategori;
 ```
