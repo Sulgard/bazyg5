@@ -29,3 +29,18 @@ LEFT JOIN stan_magazynowy sm
 ON sm.towar=t.id_towaru
 group by k.nazwa_kategori;
 ```
+### 5.Wyświetl nazwę kategorii i w kolejnej kolumnie listę wszystkich produktów należącej do każdej z nich.
+
+```sql
+SELECT distinct(k.nazwa_kategori),group_concat(nazwa_towaru) as lista_produktow FROM kategoria k 
+LEFT JOIN towar t
+ON t.kategoria=k.id_kategori
+LEFT JOIN stan_magazynowy sm
+ON sm.towar=t.id_towaru
+group by k.nazwa_kategori;
+```
+
+### 6.Wyświetl średnie zarobki pracowników za zaokrągleniem do 2 miejsc po przecinku.
+```sql
+
+```
