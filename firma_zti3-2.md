@@ -23,5 +23,13 @@ ORDER BY wartosc_zamowienia DESC LIMIT 10;
 ### 3.Wyświetl wartość przychodu dla każdego roku. Dane posortuj malejąco według sumy wartości zamówień.
 
 ```sql
+SELECT YEAR(z.data_zamowienia) as rok,sum(pz.ilosc*pz.cena) as wartosc_zamowienia FROM zamowienie z 
+LEFT JOIN pozycja_zamowienia pz
+ON z.id_zamowienia=pz.zamowienie
+group by YEAR(z.data_zamowienia);
+```
+### 4.Wyświetl sumę wartości wszystkich anulowanych zamówień.
+
+```sql
 
 ```
