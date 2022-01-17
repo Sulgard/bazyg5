@@ -87,6 +87,13 @@ GROUP BY k.nazwa_kategori;
 ### 9.Przygotuj zapytanie, które wyświetli dane w poniższej postaci (policz ilu pracowników urodziło się w danym miesiącu - uwaga na porządek sortowania).
 
 ```sql
-SELECT monthname(data_urodzenia) as miesiac, count(id_pracownika) from pracownik
-GROUP BY miesiac ;
+SELECT monthname(data_urodzenia) AS miesiac, count(id_pracownika) FROM pracownik 
+GROUP BY MONTH(data_urodzenia), 
+monthname(data_urodzenia) ORDER BY MONTH(data_urodzenia);
+```
+
+### 10.#Wyświetl imię i nazwisko pracownika i koszt jaki poniósł pracodawca od momentu jego zatrudnienia.
+```sql
+SELECT p.imie, p.nazwisko, timestampdiff(MONTH, data_zatrudnienia, curdate()) * p.pensja
+FROM pracownik p;
 ```
