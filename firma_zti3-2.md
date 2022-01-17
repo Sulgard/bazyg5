@@ -51,5 +51,37 @@ GROUP BY ak.miejscowosc;
 
 ### 6.Wyświetl dotychczasowy dochód firmy biorąc pod uwagę tylko zamówienia zrealizowane.
 ```sql
-
+SELECT (sum(pz.ilosc*pz.cena) - sum(pz.ilosc*t.cena_zakupu)) as dochod from pozycja_zamowienia pz
+LEFT JOIN zamowienie z 
+ON z.id_zamowienia=pz.zamowienie
+LEFT JOIN status_zamowienia sz
+ON sz.id_statusu_zamowienia=z.status_zamowienia
+LEFT JOIN towar t 
+ON t.id_towaru=pz.towar
+WHERE id_statusu_zamowienia = 5;
 ```
+
+### 7.Policz i wyświetl dochód (przychód z zamówień i cena zakupu towaru) w każdym roku działalności firmy.
+```sql
+SELECT year(data_zamowienia)as rok,(sum(pz.ilosc*pz.cena) - sum(pz.ilosc*t.cena_zakupu)) as dochod from pozycja_zamowienia pz
+LEFT JOIN zamowienie z 
+ON z.id_zamowienia=pz.zamowienie
+LEFT JOIN status_zamowienia sz
+ON sz.id_statusu_zamowienia=z.status_zamowienia
+LEFT JOIN towar t 
+ON t.id_towaru=pz.towar
+WHERE id_statusu_zamowienia = 5
+GROUP BY rok;
+```
+
+### 8.Wyświetl wartość aktualnego stanu magazynowego z podziałem na kategorię produktów.
+```sql
+SELECT k.nazwa_kategori,sum(t.cena_zakupu*sm.ilosc) as wartosc FROM kategoria k
+LEFT JOIN towar t
+ON t.kategoria=k.id_kategori
+LEFT JOIN stan_magazynowy sm
+ON sm.towar=t.id_towaru
+GROUP BY k.nazwa_kategori;
+```
+
+### 9.
