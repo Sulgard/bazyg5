@@ -84,4 +84,9 @@ ON sm.towar=t.id_towaru
 GROUP BY k.nazwa_kategori;
 ```
 
-### 9.
+### 9.Przygotuj zapytanie, które wyświetli dane w poniższej postaci (policz ilu pracowników urodziło się w danym miesiącu - uwaga na porządek sortowania).
+
+```sql
+SELECT monthname(data_urodzenia) as miesiac, count(id_pracownika) from pracownik
+GROUP BY miesiac ;
+```
